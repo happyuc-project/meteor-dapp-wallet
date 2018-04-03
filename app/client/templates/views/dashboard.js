@@ -94,7 +94,6 @@ Template['views_dashboard'].events({
   'click .create.account': function(e) {
     e.preventDefault();
 
-    // TODO mark
     mist.requestAccount(function(e, accounts) {
       if (!e) {
         if (!_.isArray(accounts)) {
