@@ -4,3 +4,6 @@ app/packages/*
 packages/
 app/public/i18n/*.json
 app/.meteor/dev_bundle
+.idea/
+node_moduals/
+package-lock.json
