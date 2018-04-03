@@ -18,7 +18,7 @@ The available units
 */
 selectableUnits = [{
     text: 'ETHER',
-    value: 'ether'
+    value: 'hucer'
 },
 {
     text: 'FINNEY', //(µΞ)
@@ -53,7 +53,7 @@ if (moment().format('MM-DD')=='04-01') {
         { text: 'LOVELACE', value: 'lovelace'},
         { text: 'BABBAGE', value: 'babbage'},
         { text: 'WEI', value: 'wei'},
-        { text: 'NOETHER', value: 'noether'})
+        { text: 'NOETHER', value: 'nohucer'})
 
 // Claude's Birthday
 } else if (moment().format('MM-DD')=='04-30') {
@@ -75,7 +75,7 @@ Template['elements_selectableUnit'].helpers({
     */
     'selectedUnit': function(){
         var unit = _.find(selectableUnits, function(unit){
-            return unit.value === EthTools.getUnit();
+            return unit.value === HucTools.getUnit();
         });
 
         if(unit)
@@ -106,6 +106,6 @@ Template['elements_selectableUnit'].events({
     @event change .inline-form
     */
     'change .inline-form': function(e, template, value){
-        EthTools.setUnit(value);
+        HucTools.setUnit(value);
     }
 });

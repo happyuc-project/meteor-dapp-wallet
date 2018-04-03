@@ -66,14 +66,14 @@ Template['elements_compileContract'].onCreated(function() {
         var txData = '';
 
         if(selectedType && selectedType === 'source-code' && selectedContract){  
-            // add the default web3 sendTransaction arguments
+            // add the default webu sendTransaction arguments
             constructorInputs.push({
                 data: selectedContract.bytecode
             });
     
             // generate new contract code
             // TemplateVar.set('txData', );
-            txData = web3.eth.contract(selectedContract.jsonInterface).new.getData.apply(null, constructorInputs);
+            txData = webu.huc.contract(selectedContract.jsonInterface).new.getData.apply(null, constructorInputs);
             TemplateVar.set('contract', selectedContract);
     
             // Save data to localstorage
@@ -81,9 +81,9 @@ Template['elements_compileContract'].onCreated(function() {
 
         } else {
             // Bytecode Data  
-            if (!selectedToken || selectedToken === 'ether') {
+            if (!selectedToken || selectedToken === 'hucer') {
 
-                // send ether         
+                // send hucer
                 txData = (TemplateVar.get('show')) ? textareaData : '';
 
             }
@@ -125,7 +125,7 @@ Template['elements_compileContract'].onRendered(function() {
         TemplateVar.set(template, 'compileError', false);
 
         Meteor.setTimeout(function(argument) {
-            web3.eth.compile.solidity(sourceCode, function(error, compiledContracts){
+            webu.huc.compile.solidity(sourceCode, function(error, compiledContracts){
                 
 
                 // read the fields again

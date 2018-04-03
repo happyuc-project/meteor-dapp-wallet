@@ -41,12 +41,12 @@ Template.registerHelper('isWalletMode', function(){
 });
 
 /**
-Check if currency unit is an ether unit
+Check if currency unit is an hucer unit
 
-@method (isEtherUnit)
+@method (isHucerUnit)
 **/
-Template.registerHelper('isEtherUnit', function(){
-    var unit = EthTools.getUnit();
+Template.registerHelper('isHucerUnit', function(){
+    var unit = HucTools.getUnit();
     return !(unit === 'usd' || unit === 'eur' || unit === 'btc' || unit === 'gbp' || unit === 'brl');
 });
 
@@ -95,7 +95,7 @@ Return the current unit
 @method (unit)
 **/
 Template.registerHelper('unit', function(){
-    return EthTools.getUnit();
+    return HucTools.getUnit();
 });
 
 /**
@@ -104,7 +104,7 @@ Return the latest block
 @method (latestBlock)
 **/
 Template.registerHelper('latestBlock', function(){
-    return EthBlocks.latest;
+    return HucBlocks.latest;
 });
 
 /**
@@ -113,10 +113,10 @@ Returns a list of accounts and wallets sorted by balance
 @method (latestBlock)
 **/
 Template.registerHelper('selectAccounts', function(hideWallets){
-    var accounts = EthAccounts.find({balance:{$ne:"0"}}, {sort: {balance: 1}}).fetch();
+    var accounts = HucAccounts.find({balance:{$ne:"0"}}, {sort: {balance: 1}}).fetch();
 
     if(hideWallets !== true)
-        accounts = _.union(Wallets.find({owners: {$in: _.pluck(EthAccounts.find().fetch(), 'address')}, address: {$exists: true}}, {sort: {name: 1}}).fetch(), accounts);
+        accounts = _.union(Wallets.find({owners: {$in: _.pluck(HucAccounts.find().fetch(), 'address')}, address: {$exists: true}}, {sort: {name: 1}}).fetch(), accounts);
 
     return accounts;
 });
@@ -182,7 +182,7 @@ Formats a timestamp to any format given.
 @method (formatTime)
 @param {String} time         The timstamp, can be string or unix format
 @param {String} format       the format string, can also be "iso", to format to ISO string, or "fromnow"
-//@param {Boolean} realTime    Whether or not this helper should re-run every 10s
+//@param {Boolean} realTime    Whhucer or not this helper should re-run every 10s
 @return {String} The formated time
 **/
 Template.registerHelper('formatTime', Helpers.formatTime);
@@ -191,7 +191,7 @@ Template.registerHelper('formatTime', Helpers.formatTime);
 /**
 Formats a given transactions balance
 
-    {{formatTransactionBalance value exchangeRates "ether"}}
+    {{formatTransactionBalance value exchangeRates "hucer"}}
 
 @method formatTransactionBalance
 @param {String} value  the value to format
@@ -210,7 +210,7 @@ Formats address to a CaseChecksum
 @return {String} checksumAddress    The returned, checksummed address
 **/
 Template.registerHelper('toChecksumAddress', function(address){
-    return _.isString(address) ? web3.toChecksumAddress(address) : '';
+    return _.isString(address) ? webu.toChecksumAddress(address) : '';
 });
 
 

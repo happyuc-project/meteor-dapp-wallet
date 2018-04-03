@@ -26,7 +26,7 @@ Helpers.getDefaultContractExample = function(withoutPragma) {
         var solcVersion;
 
         // Keep this for now as the Mist-API object will only be availabe from Mist version >= 0.8.9
-        // so that older versions that will query code from wallet.ethereum.org won't use broken example code.
+        // so that older versions that will query code from wallet.happyuc.org won't use broken example code.
         if (typeof mist !== 'undefined' && mist.solidity && mist.solidity.version) {
             solcVersion = mist.solidity.version;
         }
@@ -70,7 +70,7 @@ Return an account you own, from a list of accounts
 **/
 Helpers.getOwnedAccountFrom = function(accountList){
     // Load the accounts owned by user and sort by balance
-    var accounts = EthAccounts.find({}, {sort: {balance: 1}}).fetch();
+    var accounts = HucAccounts.find({}, {sort: {balance: 1}}).fetch();
     accounts.sort(Helpers.sortByBalance);
 
     // Looks for them among the wallet account owner
@@ -125,7 +125,7 @@ Helpers.formatNumberByDecimals = function(number, decimals){
         numberFormat += "0";
     }
 
-    return EthTools.formatNumber(new BigNumber(number, 10).dividedBy(Math.pow(10, decimals)), numberFormat);
+    return HucTools.formatNumber(new BigNumber(number, 10).dividedBy(Math.pow(10, decimals)), numberFormat);
 };
 
 /**
@@ -148,7 +148,7 @@ Helpers.checkChain = function(callback){
     return callback(null);
 
 
-    web3.eth.getCode(originalContractAddress, function(e, code){
+    webu.huc.getCode(originalContractAddress, function(e, code){
         if(code && code.length <= 2) {
 
             if(_.isFunction(callback))
@@ -166,7 +166,7 @@ Check if the given wallet is a watch only wallet, by checking if we are one of o
 @param {String} id the id of the wallet to check
 */
 Helpers.isWatchOnly = function(id) {
-    return !Wallets.findOne({_id: id, owners: {$in: _.pluck(EthAccounts.find({}).fetch(), 'address')}});
+    return !Wallets.findOne({_id: id, owners: {$in: _.pluck(HucAccounts.find({}).fetch(), 'address')}});
 };
 
 /**
@@ -191,7 +191,7 @@ Helpers.showNotification = function(i18nText, values, callback) {
 };
 
 /**
-Gets the docuement matching the given addess from the EthAccounts or Wallets collection.
+Gets the docuement matching the given addess from the HucAccounts or Wallets collection.
 
 @method getAccountByAddress
 @param {String} address
@@ -201,11 +201,11 @@ Helpers.getAccountByAddress = function(address, reactive) {
     var options = (reactive === false) ? {reactive: false} : {};
     if(_.isString(address))
         address = address.toLowerCase();
-    return EthAccounts.findOne({address: address}, options) || Wallets.findOne({address: address}, options) || CustomContracts.findOne({address: address}, options);
+    return HucAccounts.findOne({address: address}, options) || Wallets.findOne({address: address}, options) || CustomContracts.findOne({address: address}, options);
 };
 
 /**
-Gets the docuement matching the given query from the EthAccounts or Wallets collection.
+Gets the docuement matching the given query from the HucAccounts or Wallets collection.
 
 @method getAccounts
 @param {String} query
@@ -215,11 +215,11 @@ Helpers.getAccounts = function(query, reactive) {
     var options = (reactive === false) ? {reactive: false} : {};
     if(_.isString(query.address))
         query.address = query.address.toLowerCase();
-    return EthAccounts.find(query, options).fetch().concat(Wallets.find(query, options).fetch());
+    return HucAccounts.find(query, options).fetch().concat(Wallets.find(query, options).fetch());
 };
 
 /**
-Gets the docuement matching the given addess from the EthAccounts or Wallets collection and returns its name or address.
+Gets the docuement matching the given addess from the HucAccounts or Wallets collection and returns its name or address.
 
 @method getAccountNameByAddress
 @param {String} name or address
@@ -304,7 +304,7 @@ Helpers.formatTransactionBalance = function(value, exchangeRates, unit) {
     if(unit instanceof Spacebars.kw)
         unit = null;
 
-    var unit = unit || EthTools.getUnit(),
+    var unit = unit || HucTools.getUnit(),
         format = '0,0.00';
 
     if((unit === 'usd' || unit === 'eur' || unit === 'btc') &&
@@ -315,10 +315,10 @@ Helpers.formatTransactionBalance = function(value, exchangeRates, unit) {
         else
             format += '[0]';
 
-        var price = new BigNumber(String(web3.fromWei(value, 'ether')), 10).times(exchangeRates[unit].price);
-        return EthTools.formatNumber(price, format) + ' '+ unit.toUpperCase();
+        var price = new BigNumber(String(webu.fromWei(value, 'hucer')), 10).times(exchangeRates[unit].price);
+        return HucTools.formatNumber(price, format) + ' '+ unit.toUpperCase();
     } else {
-        return EthTools.formatBalance(value, format + '[0000000000000000] UNIT');
+        return HucTools.formatBalance(value, format + '[0000000000000000] UNIT');
     }
 };
 
@@ -438,7 +438,7 @@ Helpers.isOnMainNetwork = function () {
 ENS Functions
 **/
 var sha3 = function(str, opt) {
-  return '0x' + web3.sha3(str, opt).replace('0x','');
+  return '0x' + webu.sha3(str, opt).replace('0x','');
 };
 
 function namehash(name) {
@@ -472,8 +472,8 @@ Helpers.getENSName = function(address, callback) {
         return;
     }
     var node = namehash(address.toLowerCase().replace('0x','')+'.addr.reverse');
-    var ensContract = web3.eth.contract(ensContractAbi);
-    var resolverContract = web3.eth.contract(resolverContractAbi);
+    var ensContract = webu.huc.contract(ensContractAbi);
+    var resolverContract = webu.huc.contract(resolverContractAbi);
 
     // instantiate ens
     ensContract.at(ensAddress, function(err, ens) {

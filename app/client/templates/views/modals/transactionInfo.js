@@ -31,8 +31,8 @@ Template['views_modals_transactionInfo'].helpers({
     @return {Number} the number of confirmations
     */
     'confirmations': function(){
-        return (EthBlocks.latest && this.blockNumber)
-            ? EthBlocks.latest.number + 1 - this.blockNumber : 0;
+        return (HucBlocks.latest && this.blockNumber)
+            ? HucBlocks.latest.number + 1 - this.blockNumber : 0;
     },
     /**
     Token value
