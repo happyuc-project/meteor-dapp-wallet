@@ -22,7 +22,7 @@ Template['elements_executeContract'].onCreated(function(){
         TemplateVar.set('executionVisible', true);
 
     // check address for code
-    web3.eth.getCode(template.data.address, function(e, code) {
+    webu.huc.getCode(template.data.address, function(e, code) {
         if(!e && code.length > 2) {
             TemplateVar.set(template, 'hasCode', true);
         }
@@ -37,7 +37,7 @@ Template['elements_executeContract'].helpers({
     @method (reactiveContext)
     */
     'reactiveContext': function() {
-        var contractInstance = web3.eth.contract(this.jsonInterface).at(this.address);
+        var contractInstance = webu.huc.contract(this.jsonInterface).at(this.address);
 
         var contractFunctions = [];
         var contractConstants = [];
@@ -138,7 +138,7 @@ Template['elements_executeContract_constant'].onCreated(function(){
     // call the contract functions when data changes and on new blocks
     this.autorun(function() {
         // make reactive to the latest block
-        EthBlocks.latest;
+        HucBlocks.latest;
 
         // get args for the constant function and add callback
         var args = TemplateVar.get('inputs').concat(function(e, r) {
@@ -224,10 +224,10 @@ Template['elements_executeContract_function'].onCreated(function(){
 
     // change the amount when the currency unit is changed
     template.autorun(function(c){
-        var unit = EthTools.getUnit();
+        var unit = HucTools.getUnit();
 
         if(!c.firstRun) {
-            TemplateVar.set('amount', EthTools.toWei(template.find('input[name="amount"]').value.replace(',','.'), unit));
+            TemplateVar.set('amount', HucTools.toWei(template.find('input[name="amount"]').value.replace(',','.'), unit));
         }
     });
 });
@@ -254,7 +254,7 @@ Template['elements_executeContract_function'].events({
     @event keyup input[name="amount"], change input[name="amount"], input input[name="amount"]
     */
     'keyup input[name="amount"], change input[name="amount"], input input[name="amount"]': function(e, template){
-        var wei = EthTools.toWei(e.currentTarget.value.replace(',','.'));
+        var wei = HucTools.toWei(e.currentTarget.value.replace(',','.'));
         TemplateVar.set('amount', wei || '0');
     },
     /**
@@ -305,7 +305,7 @@ Template['elements_executeContract_function'].events({
                 if(contracts['ct_'+ selectedAccount._id]) {
 
                     // Load the accounts owned by user and sort by balance
-                    var accounts = EthAccounts.find({name: {$exists: true}}, {sort: {name: 1}}).fetch();
+                    var accounts = HucAccounts.find({name: {$exists: true}}, {sort: {name: 1}}).fetch();
                     accounts.sort(Helpers.sortByBalance);
 
                     // Looks for them among the wallet account owner
@@ -330,7 +330,7 @@ Template['elements_executeContract_function'].events({
                             FlowRouter.go('dashboard');
 
                         } else {
-                            // EthElements.Modal.hide();
+                            // HucElements.Modal.hide();
 
                             GlobalNotification.error({
                                 content: error.message,
@@ -342,7 +342,7 @@ Template['elements_executeContract_function'].events({
                 // SIMPLE TX
                 } else {
 
-                    web3.eth.sendTransaction({
+                    webu.huc.sendTransaction({
                         from: selectedAccount.address,
                         to: to,
                         data: data,
@@ -366,7 +366,7 @@ Template['elements_executeContract_function'].events({
                             });
                         } else {
 
-                            // EthElements.Modal.hide();
+                            // HucElements.Modal.hide();
 
                             GlobalNotification.error({
                                 content: error.message,
