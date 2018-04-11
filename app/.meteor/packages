@@ -48,5 +48,5 @@ tap:i18n-bundler
 numeral:numeral
 numeral:languages
 hashanp:geopattern
-shell-server
-dynamic-import
+shell-server@0.3.1
+dynamic-import@0.3.0
