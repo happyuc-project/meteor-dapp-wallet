@@ -61,3 +61,12 @@ And push your changes to the gh-pages branch.
 - Multisig Wallet transaction below daily limit: 79 280
 - Multisig Wallet transaction above daily limit: 171 096
 - 1 Multisig confirmation: 48 363
+
+
+1.000 000 000 000 000 000  wei
+1.000 000 000 000,000     kwei
+1.000 000 000,000         mwei
+1.000,000,000             gwei
+1.000,000                 twei
+1.000                     pwei
+1.0                        huc
