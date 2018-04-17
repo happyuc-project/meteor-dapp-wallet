@@ -3,8 +3,8 @@
     "name": "standard-minifier-js",
     "version": "2.3.3"
   },
-  "totalMinifiedBytes": 2638870,
-  "totalMinifiedGzipBytes": 666925,
+  "totalMinifiedBytes": 2638750,
+  "totalMinifiedGzipBytes": 666916,
   "minifiedBytesByPackage": {
     "packages/meteor.js": 8958,
     "packages/standard-minifiers.js": 38,
@@ -611,7 +611,7 @@
     "packages/happyuc_webu.js": 141202,
     "packages/happyuc_blocks.js": 1617,
     "packages/alexvandesande_identicon.js": 1493,
-    "packages/cosmos_browserify.js": 157,
+    "packages/cosmos_browserify.js": 37,
     "packages/3stack_bignumber.js": 274438,
     "packages/amplify.js": 8705,
     "packages/frozeman_persistent-minimongo.js": 2028,
