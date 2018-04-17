@@ -33,8 +33,11 @@ contractVersions = [
 webu.huc.getBlock(0, function(e, res){
     if(!e){
         switch(res.hash) {
-            case '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3':
+            case '0xb7a220488df84b2585c4eabaf31db576a6b484d3062cab5dcb563ba8ff36338d':
                 Session.set('network', 'main');
+            break;
+            case '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3':
+                Session.set('network', 'eth');
                 break;
             case '0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177':
                 Session.set('network', 'rinkeby');
