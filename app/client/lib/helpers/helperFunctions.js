@@ -26,7 +26,7 @@ Helpers.getDefaultContractExample = function(withoutPragma) {
         var solcVersion;
 
         // Keep this for now as the Mist-API object will only be availabe from Mist version >= 0.8.9
-        // so that older versions that will query code from wallet.happyuc.org won't use broken example code.
+        // so that older versions that will query code from happyuc.org/token/ won't use broken example code.
         if (typeof mist !== 'undefined' && mist.solidity && mist.solidity.version) {
             solcVersion = mist.solidity.version;
         }
