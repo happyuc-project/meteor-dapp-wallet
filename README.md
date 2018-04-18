@@ -41,7 +41,7 @@ To make routing work properly you need to build it using:
 And start a local server which points with its document root into the `../build` folder,
 so that you can open the app using `http://localhost:80/`
 
-To deploy them to the **wallet.happyuc.org** site, execute these commands (from the app folder):
+To deploy them to the **happyuc.org/token/** site, execute these commands (from the app folder):
 
     git checkout gh-pages
     git merge develop
@@ -61,3 +61,12 @@ And push your changes to the gh-pages branch.
 - Multisig Wallet transaction below daily limit: 79 280
 - Multisig Wallet transaction above daily limit: 171 096
 - 1 Multisig confirmation: 48 363
+
+
+1.000 000 000 000 000 000  wei
+1.000 000 000 000,000     kwei
+1.000 000 000,000         mwei
+1.000,000,000             gwei
+1.000,000                 twei
+1.000                     pwei
+1.0                        huc

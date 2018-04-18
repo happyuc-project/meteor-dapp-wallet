@@ -17,12 +17,16 @@ The available units
 @property selectableUnits
 */
 selectableUnits = [{
-    text: 'ETHER',
-    value: 'hucer'
+    text: 'HUC',
+    value: 'huc'
 },
 {
-    text: 'FINNEY', //(µΞ)
-    value: 'finney'
+    text: 'WEI',
+    value: 'wei'
+},
+{
+    text: 'PWEI', //(µΞ)
+    value: 'pwei'
 },
 {
     text: 'BTC',
@@ -44,27 +48,6 @@ selectableUnits = [{
     text: 'BRL',
     value: 'brl'
 }];
-
-
-// Aprils fool
-if (moment().format('MM-DD')=='04-01') {
-    selectableUnits.push({ text: 'SZABO', value: 'szabo'},
-        { text: 'SHANNON', value: 'shannon'},
-        { text: 'LOVELACE', value: 'lovelace'},
-        { text: 'BABBAGE', value: 'babbage'},
-        { text: 'WEI', value: 'wei'},
-        { text: 'NOETHER', value: 'nohucer'})
-
-// Claude's Birthday
-} else if (moment().format('MM-DD')=='04-30') {
-    selectableUnits.push({ text: 'SHANNON', value: 'shannon'})
-// Ada's Birthday
-} else if (moment().format('MM-DD')=='12-10') {
-    selectableUnits.push({ text: 'LOVELACE', value: 'lovelace'})
-// Charles's Birthday
-} else if (moment().format('MM-DD')=='12-26') {
-    selectableUnits.push({ text: 'BABBAGE', value: 'babbage'})
-}
 
 
 Template['elements_selectableUnit'].helpers({

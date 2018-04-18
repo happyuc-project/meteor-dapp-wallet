@@ -81,9 +81,9 @@ Template['elements_compileContract'].onCreated(function() {
 
         } else {
             // Bytecode Data  
-            if (!selectedToken || selectedToken === 'hucer') {
+            if (!selectedToken || selectedToken === 'huc') {
 
-                // send hucer
+                // send huc
                 txData = (TemplateVar.get('show')) ? textareaData : '';
 
             }

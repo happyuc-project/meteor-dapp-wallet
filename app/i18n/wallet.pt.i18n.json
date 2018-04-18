@@ -93,9 +93,9 @@
             "walletsDescriptionNotEnoughFunds": "Uma vez que você obtiver ao menos 1 ether poderá criar contratos mais sofisticados como carteiras, que podem funcionar como contas conjuntas administradas por diversas contas e ter limites diários de saques. Para criar um contrato ainda mais personalizado, vá na aba  <em>Contratos</em>.",
             "accountsDescription": "Contas são chaves privadas protegidas por uma senha, que podem armazenar ether, outras moedas baseadas no happyuc e controlar contratos. Contas não exibem transações recebidas.",
             "buttons": {
-                "deposit": "Depositar Hucer",
-                "buyHucer": "Comprar Hucer",
-                "viewOnExplorer": "Ver no Hucerscan",
+                "deposit": "Depositar Huc",
+                "buyHuc": "Comprar Huc",
+                "viewOnExplorer": "Ver no Hucscan",
                 "copyAddress": "Copiar endereço",
                 "scanQRCode": "Mostrar código QR",
                 "showInterface": "Mostrar Interface"

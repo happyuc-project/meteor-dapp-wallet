@@ -9,7 +9,7 @@ updateMistBadge = function() {
     var balance = _.reduce(_.pluck(_.union(accounts, wallets), 'balance'),
         function(memo, num) { return memo + Number(num); }, 0);
 
-    mist.menu.setBadge(HucTools.formatBalance(balance, '0.0 a', 'hucer') +
+    mist.menu.setBadge(HucTools.formatBalance(balance, '0.0 a', 'huc') +
         ' HUC');
   }
 };
@@ -49,7 +49,7 @@ updateMistMenu = function() {
       mist.menu.add(account._id, {
         position: 3 + index,
         name: account.name,
-        badge: HucTools.formatBalance(account.balance, '0 a', 'hucer') + ' ETH',
+        badge: HucTools.formatBalance(account.balance, '0 a', 'huc') + ' HUC',
         selected: (location.pathname === '/account/' + account.address),
       }, function() {
         FlowRouter.go('/account/' + account.address);

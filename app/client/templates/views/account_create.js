@@ -224,7 +224,7 @@ Template['views_account_create'].helpers({
   'defaultDailyLimit': function() {
     var dailyLimit = FlowRouter.getQueryParam('dailyLimit');
     return typeof dailyLimit != 'undefined'
-        ? webu.fromWei(dailyLimit, 'hucer')
+        ? webu.fromWei(dailyLimit, 'huc')
         : 10;
   },
   /**
@@ -333,7 +333,7 @@ Template['views_account_create'].events({
         name: template.find('input[name="accountName"]').value ||
         TAPi18n.__('wallet.accounts.defaultName'),
         balance: '0',
-        dailyLimit: webu.toWei(formValues.dailyLimitAmount, 'hucer'),
+        dailyLimit: webu.toWei(formValues.dailyLimitAmount, 'huc'),
         requiredSignatures: formValues.multisigSignatures,
         creationBlock: HucBlocks.latest.number,
         code: code,

@@ -25,16 +25,16 @@ Template['elements_balance'].helpers({
   'convertedBalance': function() {
     var balance = TemplateVar.get('balance');
 
-    if (HucTools.getUnit() === 'nohucer') return 'infinite';
+    if (HucTools.getUnit() === 'nohuc') return 'infinite';
 
     if (balance) {
       if (HucTools.getUnit() === 'usd' || HucTools.getUnit() === 'eur' ||
           HucTools.getUnit() === 'gbp' || HucTools.getUnit() === 'brl')
         return HucTools.formatBalance(TemplateVar.get('balance'), '0,0.00');
-      else if (HucTools.getUnit() === 'hucer')
+      else if (HucTools.getUnit() === 'huc')
         return HucTools.formatBalance(TemplateVar.get('balance'),
             (this.showAllDecimals ? '0,0.00[0000000000000000]' : '0,0.00'));
-      else if (HucTools.getUnit() === 'finney')
+      else if (HucTools.getUnit() === 'pwei')
         return HucTools.formatBalance(TemplateVar.get('balance'),
             (this.showAllDecimals ? '0,0.00[00000000000000]' : '0,0.00'));
       else
