@@ -315,7 +315,7 @@ Helpers.formatTransactionBalance = function(value, exchangeRates, unit) {
         else
             format += '[0]';
 
-        var price = new BigNumber(String(webu.fromWei(value, 'hucer')), 10).times(exchangeRates[unit].price);
+        var price = new BigNumber(String(webu.fromWei(value, 'huc')), 10).times(exchangeRates[unit].price);
         return HucTools.formatNumber(price, format) + ' '+ unit.toUpperCase();
     } else {
         return HucTools.formatBalance(value, format + '[0000000000000000] UNIT');

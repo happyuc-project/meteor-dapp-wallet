@@ -14,12 +14,12 @@ The send transaction info template
 // Set basic variables
 Template['views_modals_sendTransactionInfo'].helpers({
     /**
-    Calculates the fee used for this transaction in hucer
+    Calculates the fee used for this transaction in huc
 
     @method (estimatedFee)
     */
     'estimatedFee': function() {
         if(this.estimatedGas && this.gasPrice)
-            return HucTools.formatBalance(new BigNumber(this.estimatedGas, 10).times(new BigNumber(this.gasPrice, 10)), '0,0.0[0000000] unit', 'hucer');
+            return HucTools.formatBalance(new BigNumber(this.estimatedGas, 10).times(new BigNumber(this.gasPrice, 10)), '0,0.0[0000000] unit', 'huc');
     }
 });

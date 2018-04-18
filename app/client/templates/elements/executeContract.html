@@ -110,7 +110,7 @@
     {{#if payable}}
     <h4>
         Send {{> elements_selectableUnit}}
-        {{#unless isHucerUnit}}({{dapp_formatBalance (TemplateVar.get "amount") "0,0.00[000000] UNIT" "hucer"}}){{/unless}}
+        {{#unless isHucUnit}}({{dapp_formatBalance (TemplateVar.get "amount") "0,0.00[000000] UNIT" "huc"}}){{/unless}}
     </h4>
     <input type="number" min="0" name="amount" placeholder="0" step="0.001">
     {{/if}}

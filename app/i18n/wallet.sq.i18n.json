@@ -31,7 +31,7 @@
                 "timeSinceBlock": "nga blloku i fundit",
                 "peers": "miq",
                 "waitingForBlocks": "Duke pritur blloqe..",
-                "testnetExplain": "Jeni në rrjetin test, MOS DËRGONI Hucer të vërtetë drejt këtyre adresave",
+                "testnetExplain": "Jeni në rrjetin test, MOS DËRGONI Huc të vërtetë drejt këtyre adresave",
                 "noAccounts": {
                   "title": "Nuk keni ende llogari",
                     "text": "Duhet të krijoni të paktën një llogari me fjalëkalim të fortë."
@@ -55,7 +55,7 @@
                 "title": "Zgjidhni një llogari"
             },
             "testnetWallet": {
-                "walletNeedsDeployment": "Duket se ndodheni në një rrjet provë.<br><br>Nuk u gjet kod origjinal kontrate. Duhet ta krijojmë një, i cili mund të përdoret nga kontratat cungje, nga adresa juaj: <br><br><small><code>__account__</code></small><br><br><em>Ju lutemi sigurohuni që kjo adresë ka të paktën 1 Hucer!</em>",
+                "walletNeedsDeployment": "Duket se ndodheni në një rrjet provë.<br><br>Nuk u gjet kod origjinal kontrate. Duhet ta krijojmë një, i cili mund të përdoret nga kontratat cungje, nga adresa juaj: <br><br><small><code>__account__</code></small><br><br><em>Ju lutemi sigurohuni që kjo adresë ka të paktën 1 Huc!</em>",
                 "testnetWalletDeployed": "Kontrata origjinale e kuletës u vendos!<br>Një kontratë origjinale kulete u vendos në adresën:<br><br><small><code>__address__</code></small>."
             },
             "addToken": {
@@ -79,7 +79,7 @@
             "defaultName": "Pa emër",
             "creating": "Duke krijuar",
             "importing": "Duke marrë",
-            "accountNote": "Llogaritë nuk mund të tregojnë transaksionet hyrëse, por mund të ruajnë, mbajnë dhe dërgojnë Hucer. Për të parë transaksionet ardhëse <a href=\"/account/new\">krijoni një kontratë kulete</a> për të ruajtur ether.",
+            "accountNote": "Llogaritë nuk mund të tregojnë transaksionet hyrëse, por mund të ruajnë, mbajnë dhe dërgojnë Huc. Për të parë transaksionet ardhëse <a href=\"/account/new\">krijoni një kontratë kulete</a> për të ruajtur ether.",
             "outOfSyncNote": "Nëse balanca e llogarisë nuk duket e përditësuar, sigurohuni që jeni të sinkronizuar me rrjetin.",
             "walletNote": "Shumica e pikave të këmbimit nuk lejojnë akoma marrjen e ether nga kuleta kontratash. Sigurohuni që ta kaloni balancën në një adresë llogarie në fillim!",
             "addressCopiedToClipboard": "U kopjua",
@@ -89,13 +89,13 @@
             "dailyLimitRemaining": "të mbetura sot",
             "requiredSignatures": "Firma të nevojshme",
             "owners": "Pronarë",
-            "walletsDescription": "Këto kontrata ruhen në zinxhirin e blloqeve dhe mund të ruajnë Hucer. Mund të kenë disa llogari si pronarë dhe ruajnë një listë të plotë të transaksioneve.",
-            "walletsDescriptionNotEnoughFunds": "Pasi të keni më shumë se 1 Hucer mund të krijoni kontrata më të sofistikuara. Kuletat janë kontrata të zgjuara që lejojnë disa llogari të kontrollojnë fondet tuaja. Mund të kenë limit mbi tërheqjet për të rritur nivelin e sigurisë (sipas dëshirës). Krijoni kontratat tuaj sipas kërkesës në faqen <em>Kontrata</em>.",
-            "accountsDescription": "Llogaritë janë çelësa të ruajtur me fjalëkalim që mund të mbajnë Hucer dhe valuta të tjera të bazuara mbi Hucer. Ato mund të kontrollojnë kontrata, por nuk mund të shfaqin transaksione ardhëse.",
+            "walletsDescription": "Këto kontrata ruhen në zinxhirin e blloqeve dhe mund të ruajnë Huc. Mund të kenë disa llogari si pronarë dhe ruajnë një listë të plotë të transaksioneve.",
+            "walletsDescriptionNotEnoughFunds": "Pasi të keni më shumë se 1 Huc mund të krijoni kontrata më të sofistikuara. Kuletat janë kontrata të zgjuara që lejojnë disa llogari të kontrollojnë fondet tuaja. Mund të kenë limit mbi tërheqjet për të rritur nivelin e sigurisë (sipas dëshirës). Krijoni kontratat tuaj sipas kërkesës në faqen <em>Kontrata</em>.",
+            "accountsDescription": "Llogaritë janë çelësa të ruajtur me fjalëkalim që mund të mbajnë Huc dhe valuta të tjera të bazuara mbi Huc. Ato mund të kontrollojnë kontrata, por nuk mund të shfaqin transaksione ardhëse.",
             "buttons": {
-                "deposit": "Transfer Hucer & Tokens",
-                "buyHucer": "Fund with Bitcoin",
-                "viewOnExplorer": "View on Hucerscan",
+                "deposit": "Transfer Huc & Tokens",
+                "buyHuc": "Fund with Bitcoin",
+                "viewOnExplorer": "View on Hucscan",
                 "copyAddress": "Copy address",
                 "scanQRCode": "Show QR-Code",
                 "showInterface": "Show Interface"
@@ -205,7 +205,7 @@
                     "description": "Kontratë e kontrolluar nga disa llogari",
                     "text1": "Kjo është llogari kyçe e kontrolluar nga",
                     "text2": "pronarë. Ju mund të dërgoni deri në",
-                    "text3": "Hucer në ditë.",
+                    "text3": "Huc në ditë.",
                     "text4": "Çdo transaksion mbi limitin ditor kërkon konfirmimin e",
                     "text5": "pronarëve.",
                     "accountOwnersTitle": "Pronarët e llogarisë",
@@ -261,7 +261,7 @@
             "texts": {
                 "ownerPaysGas": "Karburanti paguhet nga pronari i kontratës së kuletës",
                 "sendAmount": "Ju doni të dërgoni <strong>__amount__</strong>.",
-                "sendAmountEquivalent": "Ju doni të dërgoni <strong>__amount__</strong> në Hucer, duke përdorur norma këmbimi nga <a href=\"https://www.cryptocompare.com/coins/eth/overview/BTC\" target=\"_blank\">Cryptocompare.com</a>.<br>Që tani është ekuivalente me <strong>__etherAmount__</strong>.",
+                "sendAmountEquivalent": "Ju doni të dërgoni <strong>__amount__</strong> në Huc, duke përdorur norma këmbimi nga <a href=\"https://www.cryptocompare.com/coins/eth/overview/BTC\" target=\"_blank\">Cryptocompare.com</a>.<br>Që tani është ekuivalente me <strong>__etherAmount__</strong>.",
                 "sendToken": "Ju doni të dërgoni <strong>__amount__ __symbol__</strong> <strong> __name__</strong>.",
                 "overDailyLimit": "<p class=\"over-daily\">Kjo sasi është mbi limitin e mbetur ditor prej __limit__ (nga __total__ në ditë), pra ju duhet __count__ adresë tjetër për ta konfirmuar.</p>",
                 "overDailyLimit_plural": "<p class=\"over-daily\">Kjo sasi është mbi limitin e mbetur ditor prej __limit__ (nga __total__ në ditë), pra ju duhet __count__ adresa të tjera për ta konfirmuar.</p>",
@@ -270,7 +270,7 @@
                 "noCodeInRecipient": "Llogaria marrëse nuk është kontratë, pra ju nuk mund të ekzekutoni asgjë. <strong> Vendosni një adresë kontrate në fushën \"DREJT\". </strong>",
                 "addData": "Mund të shtoni të dhëna të tjera shtesë për t'u dërguar me gjithë transaksionin. Nëse nuk e dini çfarë është, atëherë <strong>mos e prekni ose mund të ketë probleme</strong>.",
                 "dataNotExecutable": "Të dhënat duket se nuk janë të ekzekutueshme, pra ky transaksion do të përdorë të gjithë karburantin që i mundësoni.",
-                "cantEstimateGas": "Konsumi juaj i karburantit nuk mund të llogaritet saktësisht, sepse ju duhet të paktën 1 Hucer në llogari.",
+                "cantEstimateGas": "Konsumi juaj i karburantit nuk mund të llogaritet saktësisht, sepse ju duhet të paktën 1 Huc në llogari.",
                 "estimatedGas": "Karburanti i nevojshëm i përafruar",
                 "timeTexts": {
                     "0": "brenda pak minutave ose më gjatë",

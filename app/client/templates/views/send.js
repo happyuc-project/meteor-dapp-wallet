@@ -65,7 +65,7 @@ var getDataField = function() {
   // send tokens
   var selectedToken = TemplateVar.get('selectedToken');
 
-  if (selectedToken && selectedToken !== 'hucer') {
+  if (selectedToken && selectedToken !== 'huc') {
     var mainRecipient = TemplateVar.getFrom('div.dapp-address-input input.to',
         'value');
     var amount = TemplateVar.get('amount') || '0';
@@ -129,12 +129,12 @@ Template['views_send'].onCreated(function() {
   // Deploy contract
   if (FlowRouter.getRouteName() === 'deployContract') {
     TemplateVar.set('selectedAction', 'deploy-contract');
-    TemplateVar.set('selectedToken', 'hucer');
+    TemplateVar.set('selectedToken', 'huc');
 
     // Send funds
   } else {
     TemplateVar.set('selectedAction', 'send-funds');
-    TemplateVar.set('selectedToken', FlowRouter.getParam('token') || 'hucer');
+    TemplateVar.set('selectedToken', FlowRouter.getParam('token') || 'huc');
   }
 
   // check if we are still on the correct chain
@@ -159,7 +159,7 @@ Template['views_send'].onCreated(function() {
   template.autorun(function(c) {
     var unit = HucTools.getUnit();
 
-    if (!c.firstRun && TemplateVar.get('selectedToken') === 'hucer') {
+    if (!c.firstRun && TemplateVar.get('selectedToken') === 'huc') {
       TemplateVar.set('amount', HucTools.toWei(
           template.find('input[name="amount"]').value.replace(',', '.'), unit));
     }
@@ -205,7 +205,7 @@ Template['views_send'].onRendered(function() {
     ;
 
     if (selectedAddress !== address) {
-      TemplateVar.set('selectedToken', 'hucer');
+      TemplateVar.set('selectedToken', 'huc');
     }
 
     selectedAddress = address;
@@ -223,8 +223,8 @@ Template['views_send'].onRendered(function() {
     if (_.isString(address))
       address = address.toLowerCase();
 
-    // Hucer tx estimation
-    if (tokenAddress === 'hucer') {
+    // Huc tx estimation
+    if (tokenAddress === 'huc') {
 
       if (HucAccounts.findOne({address: address}, {reactive: false})) {
         webu.huc.estimateGas({
@@ -326,18 +326,18 @@ Template['views_send'].helpers({
 
    @method (total)
    */
-  'total': function(hucer) {
+  'total': function(huc) {
     var selectedAccount = Helpers.getAccountByAddress(
         TemplateVar.getFrom('.dapp-select-account.send-from', 'value'));
     var amount = TemplateVar.get('amount');
     if (!_.isFinite(amount))
       return '0';
 
-    // hucer
+    // huc
     var gasInWei = TemplateVar.getFrom('.dapp-select-gas-price', 'gasInWei') ||
         '0';
 
-    if (TemplateVar.get('selectedToken') === 'hucer') {
+    if (TemplateVar.get('selectedToken') === 'huc') {
       amount = (selectedAccount && selectedAccount.owners)
           ? amount
           : new BigNumber(amount, 10).plus(new BigNumber(gasInWei, 10));
@@ -361,7 +361,7 @@ Template['views_send'].helpers({
     return Helpers.formatNumberByDecimals(amount, token.decimals);
   },
   /**
-   Returns the total amount - the fee paid to send all hucer/coins out of the account
+   Returns the total amount - the fee paid to send all huc/coins out of the account
 
    @method (sendAllAmount)
    */
@@ -370,7 +370,7 @@ Template['views_send'].helpers({
         TemplateVar.getFrom('.dapp-select-account.send-from', 'value'));
     var amount = 0;
 
-    if (TemplateVar.get('selectedToken') === 'hucer') {
+    if (TemplateVar.get('selectedToken') === 'huc') {
       var gasInWei = TemplateVar.getFrom('.dapp-select-gas-price',
           'gasInWei') || '0';
 
@@ -484,10 +484,10 @@ Template['views_send'].events({
   /**
    Select a token
 
-   @event click .token-hucer
+   @event click .token-huc
    */
-  'click .token-hucer': function(e, template) {
-    TemplateVar.set('selectedToken', 'hucer');
+  'click .token-huc': function(e, template) {
+    TemplateVar.set('selectedToken', 'huc');
 
     // trigger amount box change
     template.$('input[name="amount"]').trigger('change');
@@ -501,7 +501,7 @@ Template['views_send'].events({
     var value = e.currentTarget.value;
     TemplateVar.set('selectedToken', value);
 
-    if (value === 'hucer')
+    if (value === 'huc')
       TemplateVar.setTo('.dapp-data-textarea', 'value', '');
 
     // trigger amount box change
@@ -514,8 +514,8 @@ Template['views_send'].events({
    */
   'keyup input[name="amount"], change input[name="amount"], input input[name="amount"]': function(
       e, template) {
-    // hucer
-    if (TemplateVar.get('selectedToken') === 'hucer') {
+    // huc
+    if (TemplateVar.get('selectedToken') === 'huc') {
       var wei = HucTools.toWei(e.currentTarget.value.replace(',', '.'));
 
       TemplateVar.set('amount', wei || '0');
@@ -562,7 +562,7 @@ Template['views_send'].events({
         estimatedGas = 22000;
 
       // if its a wallet contract and tokens, don't need to remove the gas addition on send-all, as the owner pays
-      if (sendAll && (selectedAccount.owners || tokenAddress !== 'hucer'))
+      if (sendAll && (selectedAccount.owners || tokenAddress !== 'huc'))
         sendAll = false;
 
       console.log('Providing gas: ', estimatedGas, sendAll ? '' : ' + 100000');
@@ -574,7 +574,7 @@ Template['views_send'].events({
         });
 
       if (selectedAccount.balance === '0' &&
-          (!selectedAccount.owners || tokenAddress === 'hucer'))
+          (!selectedAccount.owners || tokenAddress === 'huc'))
         return GlobalNotification.warning({
           content: 'i18n:wallet.send.error.emptyWallet',
           duration: 2,
@@ -586,7 +586,7 @@ Template['views_send'].events({
           duration: 2,
         });
 
-      if (tokenAddress === 'hucer') {
+      if (tokenAddress === 'huc') {
 
         if ((_.isEmpty(amount) || amount === '0' || !_.isFinite(amount)) &&
             !data)

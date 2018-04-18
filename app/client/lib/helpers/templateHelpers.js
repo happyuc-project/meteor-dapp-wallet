@@ -41,11 +41,11 @@ Template.registerHelper('isWalletMode', function(){
 });
 
 /**
-Check if currency unit is an hucer unit
+Check if currency unit is an huc unit
 
-@method (isHucerUnit)
+@method (ishucUnit)
 **/
-Template.registerHelper('isHucerUnit', function(){
+Template.registerHelper('ishucUnit', function(){
     var unit = HucTools.getUnit();
     return !(unit === 'usd' || unit === 'eur' || unit === 'btc' || unit === 'gbp' || unit === 'brl');
 });
@@ -191,7 +191,7 @@ Template.registerHelper('formatTime', Helpers.formatTime);
 /**
 Formats a given transactions balance
 
-    {{formatTransactionBalance value exchangeRates "hucer"}}
+    {{formatTransactionBalance value exchangeRates "huc"}}
 
 @method formatTransactionBalance
 @param {String} value  the value to format
