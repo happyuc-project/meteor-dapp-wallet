@@ -1,6 +1,5 @@
 // disconnect any meteor server
-if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1')
-  Meteor.disconnect();
+if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') Meteor.disconnect();
 
 // Make sure the example contract code is up to date
 var contractSource = localStorage.getItem('contractSource');
@@ -50,11 +49,10 @@ webu.huc.isSyncing(function(error, syncing) {
 
     } else if (_.isObject(syncing)) {
 
-      syncing.progress = Math.floor(((syncing.currentBlock -
-          syncing.startingBlock) /
+      syncing.progress = Math.floor((
+          (syncing.currentBlock - syncing.startingBlock) /
           (syncing.highestBlock - syncing.startingBlock)) * 100);
-      syncing.blockDiff = numeral(syncing.highestBlock - syncing.currentBlock).
-          format('0,0');
+      syncing.blockDiff = numeral(syncing.highestBlock - syncing.currentBlock).format('0,0');
 
       TemplateVar.setTo('header nav', 'syncing', syncing);
 
@@ -71,9 +69,7 @@ webu.huc.isSyncing(function(error, syncing) {
 });
 
 var connect = function() {
-
   if (webu.isConnected()) {
-
     // only start app operation, when the node is not syncing (or the eth_syncing property doesn't exists)
     webu.huc.getSyncing(function(e, sync) {
       if (e || !sync) {
@@ -82,9 +78,7 @@ var connect = function() {
         HucAccounts.init();
       }
     });
-
   } else {
-
     // make sure the modal is rendered after all routes are executed
     Meteor.setTimeout(function() {
       // if in mist, tell to start geth, otherwise start with RPC
@@ -100,9 +94,9 @@ var connect = function() {
           Tracker.afterFlush(function() {
             connect();
           });
-        }
+        },
       }, {
-        closeable: false
+        closeable: false,
       });
 
     }, 600);

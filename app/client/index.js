@@ -4,7 +4,7 @@ Meteor.startup(function() {
   if (Cookie.get('TAPi18next')) {
     TAPi18n.setLanguage(Cookie.get('TAPi18next'));
   } else {
-    var userLang = navigator.language || navigator.userLanguage,
+    var userLang  = navigator.language || navigator.userLanguage,
         availLang = TAPi18n.getLanguages();
 
     // set default language
@@ -31,8 +31,7 @@ Meteor.startup(function() {
     }
 
     // If on the mainnet, this will add the unicorn token by default, only once.
-    if (!localStorage['dapp_hasUnicornToken'] && Session.get('network') ===
-        'main') {
+    if (!localStorage['dapp_hasUnicornToken'] && Session.get('network') === 'main') {
       localStorage.setItem('dapp_hasUnicornToken', true);
 
       // wait 5s, to allow the tokens to be loaded from the localstorage first

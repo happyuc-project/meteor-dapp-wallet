@@ -16,10 +16,10 @@ updateMistBadge = function() {
 
 // ADD MIST MENU
 updateMistMenu = function() {
-  if (typeof mist === 'undefined')
-    return;
+  if (typeof mist === 'undefined') return;
 
-  var accounts = _.union(Wallets.find({}, {sort: {name: 1}}).fetch(),
+  var accounts = _.union(
+      Wallets.find({}, {sort: {name: 1}}).fetch(),
       HucAccounts.find({}, {sort: {name: 1}}).fetch());
 
   // sort by balance
