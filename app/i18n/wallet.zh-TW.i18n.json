@@ -88,7 +88,7 @@
             "owners": "擁有者",
             "walletsDescription": "這些是存在區塊鏈中，可以保存和保障 ether 的契約。他們可以使用多個帳戶擁有者，而且記錄所有交易的日誌。",
             "walletsDescriptionNotEnoughFunds": "一旦你有多於 1 ether 時你可以創建更成熟的契約。錢包只是一種基本的智能契約，讓你的基金能夠由多個帳戶控制，而且想要的話可以設定每日提款限額來增加安全性。要創建自己的客製化契約，到<em> 契約 </em> 分頁。",
-            "accountsDescription": "帳戶由密碼保護，可以儲存 ether ，保障基於以太坊的 Token 或貨幣，並且控制契約。帳戶無法顯示進帳中的交易。",
+            "accountsDescription": "帳戶由密碼保護，可以儲存 ether ，保障基於欢乐链的 Token 或貨幣，並且控制契約。帳戶無法顯示進帳中的交易。",
             "buttons": {
                 "deposit": "存入 Huc",
                 "depositBitcoin": "使用 Bitcoin 做存款",
