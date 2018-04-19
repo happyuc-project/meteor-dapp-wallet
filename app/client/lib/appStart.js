@@ -87,7 +87,7 @@ var connect = function() {
 
     // make sure the modal is rendered after all routes are executed
     Meteor.setTimeout(function() {
-      // if in mist, tell to start geth, otherwise start with RPC
+      // if in mist, tell to start ghuc, otherwise start with RPC
       var ghucRPC = (webu.admin) ? 'ghuc' : 'ghuc --rpc --rpccorsdomain "' +
           window.location.protocol + '//' + window.location.host + '"';
 

@@ -23,7 +23,7 @@
             "texts": {
                 "note": "Notiz",
                 "balance": "Kontostand",
-                "connectionErrorMist": "Verbindung konnte nicht hergestellt werden. Bitte starten Sie Geth mit folgendem Kommando:<br><br><small><code>__node__</code><br><br>Stellen Sie sicher, dass Sie Ihren IPC Pfad zum einen Standardpfad festgelegt haben, wenn Sie einen anderen <code>datadir</code> verwenden, z.B. <br><code>geth --datadir ... --ipcpath /Users/&lt;yourUser&gt;/Library/Happyuc/geth.ipc</code><br>oder<br><code>geth --datadir ... --ipcpath /Users/&lt;yourUser&gt;/.happyuc/geth.ipc</code>. <br><br>Alternative Option: <code>--unlock &lt;yourAccount&gt;.</code></small>",
+                "connectionErrorMist": "Verbindung konnte nicht hergestellt werden. Bitte starten Sie Geth mit folgendem Kommando:<br><br><small><code>__node__</code><br><br>Stellen Sie sicher, dass Sie Ihren IPC Pfad zum einen Standardpfad festgelegt haben, wenn Sie einen anderen <code>datadir</code> verwenden, z.B. <br><code>ghuc --datadir ... --ipcpath /Users/&lt;yourUser&gt;/Library/happyuc/ghuc.ipc</code><br>oder<br><code>ghuc --datadir ... --ipcpath /Users/&lt;yourUser&gt;/.happyuc/ghuc.ipc</code>. <br><br>Alternative Option: <code>--unlock &lt;yourAccount&gt;.</code></small>",
                 "connectionErrorBrowser": "Verbindung konnte nicht hergestellt werden. Bitte starten Sie Geth mit den folgenden Optionen:<br><br><small><code>__node__</code><br><br>Alternative Optionen: <code>--unlock &lt;yourAccount&gt;.</code></small>",
                 "pendingConfirmationsBadge": "Ausstehende Bestätigung!",
                 "nodeSyncing": "__blockDiff__ ausstehende Blöcke",
@@ -37,7 +37,7 @@
                 }
             },
             "error": {
-                "wrongChain": "Sie folgen nicht der Hauptblockchain, bitte starten Sie die Happyuc Wallet App neu!"
+                "wrongChain": "Sie folgen nicht der Hauptblockchain, bitte starten Sie die HappyUC Wallet App neu!"
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Diese intelligente Vertrag Geldbörse hat veraltete Code und unterliegt Phishing-Attacken. ",
@@ -89,7 +89,7 @@
             "owners": "Eigentümer",
             "walletsDescription": "Verträge werden auf der Blockchain gespeichert und dienen der Verwaltung von Huc. Ein Vertrag kann mehrere Konten als Eigentümer haben. Verträge zeigen im Gegensatz zu Konten immer eine vollständige Transaktionshistorie.",
             "walletsDescriptionNotEnoughFunds": "Es wird mindestens 1 Huc benötigt, um komplexe Verträge zu erstellen.",
-            "accountsDescription": "Konten können Huc, Happyuc-basierte Token oder Coins enthalten. Darüber hinaus können Konten Verträge kontrollieren. Im Gegensatz zu Wallets können Konten keine einkommenden Transaktionen anzeigen.",
+            "accountsDescription": "Konten können Huc, HappyUC-basierte Token oder Coins enthalten. Darüber hinaus können Konten Verträge kontrollieren. Im Gegensatz zu Wallets können Konten keine einkommenden Transaktionen anzeigen.",
             "buttons": {
                 "deposit": "Huc hinterlegen",
                 "buyHuc": "Kaufe Huc",
@@ -254,7 +254,7 @@
             "texts": {
                 "ownerPaysGas": "Gas wird vom Besitzer des Wallet-Vertrags bezahlt",
                 "sendAmount": "Sie möchten <strong>__amount__</strong> versenden.",
-                "sendAmountEquivalent": "Sie möchten <strong>__amount__</strong> in Huc versenden, zu einem Wechselkurs von <a href=\"https://www.cryptocompare.com/coins/eth/overview/BTC\" target=\"_blank\">cryptocompare.com</a>.<br>Was zur Zeit einem Betrag von <strong>__etherAmount__</strong> Huc entspricht.",
+                "sendAmountEquivalent": "Sie möchten <strong>__amount__</strong> in Huc versenden, zu einem Wechselkurs von <a href=\"https://www.cryptocompare.com/coins/eth/overview/BTC\" target=\"_blank\">cryptocompare.com</a>.<br>Was zur Zeit einem Betrag von <strong>__hucAmount__</strong> Huc entspricht.",
                 "sendToken": "Sie möchten <strong>__amount__ __symbol__</strong> von <strong> __name__</strong> versenden.",
                 "overDailyLimit": "<p class=\"over-daily\">Der Betrag überschreitet das Tageslimit von __limit__ (of __total__ per day), Sie benötigen __count__ weiteres Konto zum Bestätigen.</p>",
                 "overDailyLimit_plural": "<p class=\"over-daily\">Der Betrag überschreitet das Tageslimit von  __limit__ (of __total__ per day), Sie benötigen __count__ weitere Konten zum Bestätigen.</p>",
@@ -279,7 +279,7 @@
             "title": "Eigene <strong>Token</strong>",
             "subTitle": "Hinzugefügte Token",
             "admin": "__name__ (Admin Seite)",
-            "description": "Token sind Währungen oder Tauschgegenstände, die auf der Happyuc-Plattform aufsetzen. Damit ein Konto ein Token beobachten oder versenden kann, müssen Sie die Kontoadressen in die folgende Liste einfügen. Sie können Ihren eigenen Token erzeugen, in dem Sie z.B. folgendes <a href=\"https://happyuc.org/token#the-code\" target=\"_blank\">Beispiel eines Token Vertrags</a> anpassen, oder mehr über <a href=\"https://www.happyuc.org/token\" target=\"_blank\">Happyuc Token</a> lernen.",
+            "description": "Token sind Währungen oder Tauschgegenstände, die auf der HappyUC-Plattform aufsetzen. Damit ein Konto ein Token beobachten oder versenden kann, müssen Sie die Kontoadressen in die folgende Liste einfügen. Sie können Ihren eigenen Token erzeugen, in dem Sie z.B. folgendes <a href=\"https://happyuc.org/token#the-code\" target=\"_blank\">Beispiel eines Token Vertrags</a> anpassen, oder mehr über <a href=\"https://www.happyuc.org/token\" target=\"_blank\">HappyUC Token</a> lernen.",
             "deleteToken": "Möchten Sie den Token <strong>__token__</strong> von Ihrer Liste entfernen?",
             "addedToken": "__token__ wurde Ihrer Beobachtungsliste hinzugefügt",
             "editedToken": "Token __token__ wurde bearbeitet",
