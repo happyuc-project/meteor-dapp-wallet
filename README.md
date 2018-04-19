@@ -1,6 +1,6 @@
-# Happyuc Wallet Ðapp
+# HappyUC Wallet Ðapp
 
-The Happyuc wallet.
+The HappyUC wallet.
 
 [![Build Status](https://travis-ci.org/happyuc/meteor-dapp-wallet.svg?branch=master)](https://travis-ci.org/happyuc/meteor-dapp-wallet)
 

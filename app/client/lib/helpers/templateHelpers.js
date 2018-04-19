@@ -180,11 +180,11 @@ Formats a timestamp to any format given.
     {{formatTime myTime "YYYY-MM-DD"}}
 
 @method (formatTime)
-@param {String} time         The timstamp, can be string or unix format
+@param {String} time         The timestamp, can be string or unix format
 @param {String} format       the format string, can also be "iso", to format to ISO string, or "fromnow"
-//@param {Boolean} realTime    Whhucer or not this helper should re-run every 10s
-@return {String} The formated time
-**/
+//@param {Boolean} realTime    Whether or not this helper should re-run every 10s
+@return {String} The formatted time
+
 Template.registerHelper('formatTime', Helpers.formatTime);
 
 

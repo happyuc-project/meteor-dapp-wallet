@@ -23,8 +23,8 @@
             "texts": {
                 "note": "Note",
                 "balance": "Balance",
-                "connectionErrorMist": "Unable to connect. Please start geth using:<br><br><small><code>__node__</code><br><br>Make sure you set your IPC path to the default one, when using a different <code>datadir</code>, e.g.<br><code>geth --datadir ... --ipcpath /Users/&lt;yourUser&gt;/Library/Happyuc/geth.ipc</code><br>or<br><code>geth --datadir ... --ipcpath /Users/&lt;yourUser&gt;/.happyuc/geth.ipc</code>. <br><br>Optional add: <code>--unlock &lt;yourAccount&gt;.</code></small>",
-                "connectionErrorBrowser": "Unable to connect. Please start geth with the following options:<br><br><small><code>__node__</code><br><br>Optional add: <code>--unlock &lt;yourAccount&gt;.</code></small>",
+                "connectionErrorMist": "Unable to connect. Please start ghuc using:<br><br><small><code>__node__</code><br><br>Make sure you set your IPC path to the default one, when using a different <code>datadir</code>, e.g.<br><code>ghuc --datadir ... --ipcpath /Users/&lt;yourUser&gt;/Library/happyuc/ghuc.ipc</code><br>or<br><code>ghuc --datadir ... --ipcpath /Users/&lt;yourUser&gt;/.happyuc/ghuc.ipc</code>. <br><br>Optional add: <code>--unlock &lt;yourAccount&gt;.</code></small>",
+                "connectionErrorBrowser": "Unable to connect. Please start ghuc with the following options:<br><br><small><code>__node__</code><br><br>Optional add: <code>--unlock &lt;yourAccount&gt;.</code></small>",
                 "pendingConfirmationsBadge": "Pending Confirmation!",
                 "nodeSyncing": "__blockDiff__ blocks left",
                 "blockReceived": "New block received",
@@ -38,7 +38,7 @@
                 }
             },
             "error": {
-                "wrongChain": "You seem to be on a different chain.  Please restart the Happyuc Wallet App!"
+                "wrongChain": "You seem to be on a different chain.  Please restart the HappyUC Wallet App!"
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "This smart contract wallet has outdated code and is subject to phishing attacks. ",
@@ -91,7 +91,7 @@
             "owners": "Owners",
             "walletsDescription": "These contracts are stored on the blockchain and can hold and secure Huc. They can have multiple accounts as owners and keep a full log of all transactions.",
             "walletsDescriptionNotEnoughFunds": "Once you have more than 1 Huc you can create more sophisticated contracts. Wallets are smart contracts that allow your funds to be controlled by multiple accounts.  They can have an optional daily limit on withdrawals to increase security.  Create your own custom contracts on the <em>Contracts</em> tab.",
-            "accountsDescription": "Accounts are password protected keys that can hold Huc and Happyuc-based tokens.  They can control contracts, but can't display incoming transactions.",
+            "accountsDescription": "Accounts are password protected keys that can hold Huc and HappyUC-based tokens.  They can control contracts, but can't display incoming transactions.",
             "buttons": {
                 "deposit": "Transfer Huc & Tokens",
                 "buyHuc": "Buy huc",
@@ -287,7 +287,7 @@
             "title": "Custom <strong>Tokens</strong>",
             "subTitle": "Added tokens",
             "admin": "__name__ (admin page)",
-            "description": "Tokens are currencies and other fungibles built on the Happyuc platform. In order for accounts to watch for tokens and send them, you have to add their address to this list. You can create your own token by simply modifying <a href=\"https://happyuc.org/token#the-code\" target=\"_blank\">this example of a custom token contract</a> or learning more about <a href=\"https://www.happyuc.org/token\" target=\"_blank\">Happyuc Tokens</a>.",
+            "description": "Tokens are currencies and other fungibles built on the HappyUC platform. In order for accounts to watch for tokens and send them, you have to add their address to this list. You can create your own token by simply modifying <a href=\"https://happyuc.org/token#the-code\" target=\"_blank\">this example of a custom token contract</a> or learning more about <a href=\"https://www.happyuc.org/token\" target=\"_blank\">HappyUC Tokens</a>.",
             "deleteToken": "Do you want to remove the token <strong>__token__</strong> from your list?",
             "addedToken": "Added __token__ to your watch list",
             "editedToken": "Edited token __token__",
